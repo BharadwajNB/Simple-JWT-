@@ -1,10 +1,8 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
-const cookieParser = require('cookie-parser');
 const router = require('./routes/login.route');
+const userModel = require("./models/users");
 
 app.set("view engine", "ejs");
 
@@ -15,6 +13,12 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes come AFTER middleware
 app.use('/', router);
+
+
+mongoose.connect('mongodb://127.0.0.1:27017/jwt')
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.log('MongoDB connection error:', err));
+
 
 const port = 5000;
 app.listen(port, () => {
