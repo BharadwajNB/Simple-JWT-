@@ -11,6 +11,16 @@ router.get('/',(req,res)=>{
     res.render('home');
 })
 
+router.get('/create',(req,res)=> {
+    console.log('USER CREATE GET METHOD');
+    res.render('create');
+});
+
+router.get('/login',(req,res)=>{
+    console.log('LOGIN GET');
+    res.render('login');
+})
+
 
 router.post('/create', (req, res) => {
     console.log('POST METHOD WORKING');
@@ -35,11 +45,24 @@ router.post('/create', (req, res) => {
 });
 
 
-router.get('/login',(req,res)=>{
-    console.log('LOGIN GET');
-    res.render('login');
-})
+router.post("/login", async function(req,res) {
+    let user = await userModel.findOne({email: req.body.email});
+    if(!user) return res.send("Something went wrong");
 
+    bcrypt.compare(req.body.password, user.password, function(err, result) {
+        console.log(result);
+        if(result == true){
+                let token = jwt.sign({email: user.email}, "shhhhhh");
+                res.cookie("token",token);
+            res.render('dashboard');
+        }
+        else {
+            res.send("Something is wrong");
+        }
+        
+    });
+
+})
 
 
 // Make sure you EXPORT the router
