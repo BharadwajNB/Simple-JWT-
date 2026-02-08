@@ -22,7 +22,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/jwt')
   .catch(err => console.log('MongoDB connection error:', err));
 
 
-const port = 5001;
+const port = 4001;
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
