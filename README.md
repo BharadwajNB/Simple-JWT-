@@ -17,7 +17,7 @@ A RESTful authentication system built with **Node.js** and **Express.js** that i
 
 ---
 
-## 📋 Table of Contents
+##  Table of Contents
 
 - [Features](#-features)
 - [Tech Stack](#️-tech-stack)
@@ -32,17 +32,17 @@ A RESTful authentication system built with **Node.js** and **Express.js** that i
 
 ---
 
-## ✨ Features
+##  Features
 
-- 🔑 **User Authentication** — Register and login with JWT token generation
-- 🍪 **Secure Cookies** — Tokens stored in HTTP-only cookies, inaccessible to JavaScript
-- 🛡️ **Protected Routes** — Middleware-based access control for private endpoints
-- 🧩 **Modular Architecture** — Clean separation of routes, models, and views
-- ⚡ **Lightweight & Scalable** — Minimal setup with a structure designed for easy extension
+-  **User Authentication** — Register and login with JWT token generation
+-  **Secure Cookies** — Tokens stored in HTTP-only cookies, inaccessible to JavaScript
+-  **Protected Routes** — Middleware-based access control for private endpoints
+-  **Modular Architecture** — Clean separation of routes, models, and views
+-  **Lightweight & Scalable** — Minimal setup with a structure designed for easy extension
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Layer     | Technology              |
 |-----------|-------------------------|
@@ -67,7 +67,7 @@ simple-jwt/
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -98,7 +98,7 @@ JWT_SECRET=your_super_secret_key_here
 PORT=3000
 ```
 
-> ⚠️ **Important:** Never commit your `.env` file. Make sure it's listed in `.gitignore`.
+>  **Important:** Never commit your `.env` file. Make sure it's listed in `.gitignore`.
 
 ### 4. Start the Server
 
@@ -114,7 +114,7 @@ http://localhost:3000
 
 ---
 
-## 📡 API Reference
+##  API Reference
 
 ### `POST /register`
 
@@ -203,7 +203,7 @@ Clears the authentication cookie and ends the session.
 
 ---
 
-## 🔄 Authentication Flow
+## Authentication Flow
 
 ```
 ┌─────────┐         ┌─────────────┐         ┌─────────────┐
@@ -249,7 +249,7 @@ Clears the authentication cookie and ends the session.
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 This API was tested using [Postman](https://www.postman.com/). Below are the recommended test flows:
 
@@ -290,13 +290,13 @@ res.cookie("token", token, {
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 **Bharadwaj** — Backend Developer | Building scalable systems
 
 ---
 
-## ⭐ Acknowledgements
+##  Acknowledgements
 
 - [Express.js](https://expressjs.com/) — Fast, minimalist web framework for Node.js
 - [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken) — JWT implementation for Node.js
